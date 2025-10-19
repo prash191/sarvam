@@ -1,0 +1,34 @@
+{
+  "name": "sarvam-widget-monorepo",
+  "version": "3.0.0",
+  "description": "Embeddable chat + voice agent widget with backend server",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "install:all": "npm install && cd client && npm install && cd ../server && npm install",
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && npm run dev",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "build:client": "cd client && npm run build",
+    "build:server": "cd server && npm install",
+    "build": "npm run build:server && npm run build:client",
+    "vercel-build": "cd client && npm install && npm run build",
+    "start": "cd server && npm start"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "chat",
+    "widget",
+    "embeddable",
+    "voice-agent",
+    "server-client"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+

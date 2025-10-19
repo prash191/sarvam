@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sarvam Widget Demo - Development</title>
+    <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .demo-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        p { color: #666; line-height: 1.6; }
+        .config-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin: 20px 0;
+        }
+        code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+        }
+        pre {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        .status {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            padding: 12px;
+            border-radius: 4px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-content">
+        <h1>🤖 Sarvam Widget - Gemini AI Integration</h1>
+        
+        <div class="status">
+            <strong>✅ Development Mode</strong><br>
+            Running on Vite dev server with live Gemini AI integration and debug logging.
+        </div>
+
+        <p>This page demonstrates the embeddable chat widget powered by Google Gemini AI. The widget should appear as a floating button in the bottom-right corner.</p>
+        
+        <div class="config-section">
+            <h3>🔧 Configuration</h3>
+            <p>The widget is configured via the <code>window.AgentWidgetConfig</code> object and powered by <strong>Google Gemini AI</strong>:</p>
+            <pre><code>{
+  position: 'bottom-right',
+  theme: { primaryColor: '#4F46E5' },
+  agent: { 
+    name: 'Gemini Assistant', 
+    avatar: '/public/avatar.svg'
+  },
+  enableVoice: true,
+  context: "You are a helpful AI assistant powered by Google Gemini...",
+  supportedLanguages: [
+    { code: 'en', name: 'English', nativeName: 'English', voiceCode: 'en-US' },
+    { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', voiceCode: 'hi-IN' },
+    { code: 'es', name: 'Spanish', nativeName: 'Español', voiceCode: 'es-ES' }
+  ],
+  defaultLanguage: 'en'
+}</code></pre>
+            <p><strong>🌐 Multi-Language Support:</strong> The widget now supports multiple languages! Switch between English, Hindi, and Spanish using the language selector in the chat header.</p>
+
+    <!-- Widget Configuration -->
+    <script>
+        window.AgentWidgetConfig = {
+            position: 'bottom-right',
+            theme: {
+                primaryColor: '#4F46E5',
+                backgroundColor: '#ffffff',
+                textColor: '#1f2937'
+            },
+            agent: {
+                name: 'Gemini Assistant',
+                avatar: '/public/avatar.svg'
+            },
+            enableVoice: true,
+            context: "You are a helpful AI assistant powered by Google Gemini. You have access to a wide range of knowledge and can help with various tasks including coding, writing, analysis, and general questions. Be concise but thorough in your responses."
+        };
+
+        // Enable additional debug logging
+        console.log("🔧 Widget config loaded:", window.AgentWidgetConfig);
+    </script>
+
+    <!-- Widget Script (development mode) -->
+    <script type="module" src="/src/main.ts"></script>
+</body>
+</html>

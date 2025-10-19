@@ -1,0 +1,502 @@
+🤖 SARVAM WIDGET - AI CHAT ASSISTANT
+
+An intelligent, embeddable chat widget powered by Google Gemini AI
+
+================================================================================
+
+WHAT IS THIS?
+
+Sarvam Widget is like having a smart AI assistant that you can drop into any website with just one line of code. Think of it as a tiny ChatGPT that lives in the corner of your site, ready to help your visitors with anything they need.
+
+The best part? It actually REMEMBERS conversations, works with VOICE INPUT in MULTIPLE LANGUAGES, and won't mess up your website's design. It's like having a 24/7 multilingual customer support agent that never gets tired!
+
+================================================================================
+
+WHAT MAKES IT SPECIAL?
+
+🧠 ACTUALLY SMART
+- Powered by Google Gemini AI - not some boring chatbot with pre-written responses
+- Has real conversations and can answer complex questions
+- Remembers what you talked about earlier (even if you refresh the page!)
+
+🌐 SPEAKS YOUR LANGUAGE
+- Built-in support for English, Hindi, and Spanish
+- Easy language switcher right in the chat
+- Voice recognition works in all supported languages
+- AI responds in your chosen language automatically
+
+🎤 VOICE ENABLED 
+- Click the microphone and just TALK - no typing needed
+- Works in multiple languages (English, Hindi, Spanish, and more!)
+- Perfect for mobile users or accessibility
+- Voice recognition adapts to your selected language
+
+🎨 PLAYS NICE WITH YOUR SITE
+- Uses something called "Shadow DOM" (fancy tech that means it won't break your CSS)
+- Looks great on desktop and mobile
+- You can customize colors and branding
+
+⚡ SUPER EASY TO ADD
+- Just one <script> tag - that's it!
+- No complex setup or configuration needed
+- Works on any website (WordPress, React, plain HTML, whatever!)
+
+================================================================================
+
+HOW DO I USE IT?
+
+THE SIMPLE WAY
+Just add this to your website:
+
+<script src="path/to/widget.js"></script>
+
+That's it! A chat button appears in the bottom-right corner. Click it and start chatting with AI in English, Hindi, or Spanish!
+
+THE CUSTOM WAY
+Want to make it yours? Add some configuration:
+
+<script>
+  window.AgentWidgetConfig = {
+    position: 'bottom-right',           // Where to put it
+    theme: {
+      primaryColor: '#4F46E5',          // Your brand color
+      backgroundColor: '#ffffff'
+    },
+    agent: {
+      name: 'Your AI Assistant',        // Give it a name
+      avatar: 'https://your-logo.png'   // Add your logo
+    },
+    enableVoice: true,                  // Turn voice on/off
+    context: "You're a helpful assistant for [your company]. You specialize in [your expertise].",
+    supportedLanguages: [               // Languages to support
+      { code: 'en', name: 'English', nativeName: 'English', voiceCode: 'en-US' },
+      { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', voiceCode: 'hi-IN' },
+      { code: 'es', name: 'Spanish', nativeName: 'Español', voiceCode: 'es-ES' }
+    ],
+    defaultLanguage: 'en'               // Starting language
+  };
+</script>
+<script src="path/to/widget.js"></script>
+
+================================================================================
+
+WHAT CAN I CUSTOMIZE?
+
+POSITION - Where the chat button appears
+Examples: 'bottom-right', 'bottom-left', 'top-right', 'top-left'
+
+PRIMARY COLOR - Main color (buttons, accents)
+Examples: '#4F46E5', '#ff6b35', '#1a202c'
+
+AGENT NAME - What to call your AI assistant
+Examples: 'Support Bot', 'Maya', 'Help Desk'
+
+AVATAR - Picture for your assistant
+Your logo, a profile pic, or leave default
+
+CONTEXT - Tell the AI how to behave
+Example: "You're a tech support agent for our SaaS product"
+
+VOICE - Enable/disable voice input
+Options: true or false
+
+LANGUAGES - Which languages to support
+Default: English, Hindi, Spanish (easily add more!)
+
+DEFAULT LANGUAGE - Starting language when widget loads
+Examples: 'en', 'hi', 'es'
+
+================================================================================
+
+MULTI-LANGUAGE SUPPORT
+
+HOW IT WORKS
+The widget comes with THREE languages out of the box:
+🇬🇧 English (English)
+🇮🇳 हिन्दी (Hindi)
+🇪🇸 Español (Spanish)
+
+Users can switch languages using the dropdown in the chat header!
+
+WHAT HAPPENS WHEN YOU SWITCH LANGUAGES?
+1. The AI starts responding in the new language
+2. Voice recognition switches to understand that language
+3. Your choice is remembered (saved in browser)
+4. Next time you visit, it opens in your preferred language!
+
+ADDING MORE LANGUAGES
+Want French? German? Chinese? It's super easy:
+
+supportedLanguages: [
+  { code: 'en', name: 'English', nativeName: 'English', voiceCode: 'en-US' },
+  { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', voiceCode: 'hi-IN' },
+  { code: 'es', name: 'Spanish', nativeName: 'Español', voiceCode: 'es-ES' },
+  { code: 'fr', name: 'French', nativeName: 'Français', voiceCode: 'fr-FR' },
+  { code: 'de', name: 'German', nativeName: 'Deutsch', voiceCode: 'de-DE' },
+  { code: 'zh', name: 'Chinese', nativeName: '中文', voiceCode: 'zh-CN' },
+  { code: 'ja', name: 'Japanese', nativeName: '日本語', voiceCode: 'ja-JP' },
+  { code: 'ar', name: 'Arabic', nativeName: 'العربية', voiceCode: 'ar-SA' },
+  { code: 'pt', name: 'Portuguese', nativeName: 'Português', voiceCode: 'pt-BR' }
+]
+
+Each language needs:
+- code: Two-letter language code (en, hi, es, etc.)
+- name: English name of the language
+- nativeName: How the language is written in its own script (this is what users see!)
+- voiceCode: Browser voice recognition code (like 'en-US', 'hi-IN')
+
+LANGUAGE TIPS
+✅ The 'nativeName' should be in the language's own script (हिन्दी not Hindi)
+✅ Use proper voice codes for your region (en-US vs en-GB)
+✅ Gemini AI can handle 100+ languages - you're not limited!
+✅ Voice recognition works best with clear speech and quiet environments
+
+================================================================================
+
+FOR THE TECH TEAM
+
+WHAT'S UNDER THE HOOD?
+- Frontend: React 18 + TypeScript (for the nerds: it's properly typed!)
+- AI: Google Gemini 2.0 Flash (experimental - the newest, smartest model)
+- Build: Vite (super fast bundling)
+- Size: ~321KB total (includes everything - React, AI SDK, multi-language support)
+- Browser Support: Chrome, Firefox, Safari, Edge (anything modern)
+
+DEVELOPMENT SETUP
+# Clone or download the project
+npm install
+npm run dev          # Development server
+npm run build        # Build for production
+npm run test-server  # Test the built widget
+
+PROJECT STRUCTURE
+src/
+├── api/
+│   └── gemini.ts           # AI integration
+├── components/
+│   ├── ChatButton.tsx      # The floating button
+│   ├── ChatWindow.tsx      # Main chat interface  
+│   └── Widget.tsx          # Root component
+├── utils/
+│   ├── languages.ts        # Multi-language support (NEW!)
+│   ├── storage.ts          # Chat history management
+│   └── voiceRecording.ts   # Voice input handling
+├── config.ts               # Configuration logic
+├── styles.css              # All the pretty styles
+└── main.ts                 # Entry point + Shadow DOM
+
+NEW FILES FOR LANGUAGE SUPPORT
+src/utils/languages.ts - Contains:
+- Default language definitions (English, Hindi, Spanish)
+- Language-specific prompts for AI
+- localStorage utilities for saving language preference
+- Helper functions for voice code mapping
+
+================================================================================
+
+TESTING & DEMO
+
+QUICK TEST
+1. Development: npm run dev → http://localhost:5173
+2. Production: npm run test-server → http://localhost:3000
+
+WHAT TO TEST
+- Text Chat: Type "What is machine learning?" → Should get real AI response
+- Voice Chat: Click 🎤, say "Explain React components" → Should transcribe and respond
+- Language Switch: Change language dropdown → AI should respond in new language
+- Voice Language: Switch to Hindi, use voice → Should recognize Hindi speech
+- Memory: Ask follow-up questions → AI should remember context
+- Persistence: Refresh page → Chat history AND language choice should remain
+- Mobile: Test on phone → Should work great
+
+MULTI-LANGUAGE TESTING
+1. Start in English, ask "What is AI?"
+2. Switch to Hindi, ask "भारत की राजधानी क्या है?"
+3. Switch to Spanish, ask "¿Cómo está el clima?"
+4. Refresh page → Should remember your language choice
+5. Try voice in each language → Should recognize correctly
+
+CONSOLE LOGS (for debugging)
+When testing, open browser console (F12) to see:
+
+🤖 Initializing Gemini chat with context: ...
+📤 Sending message to Gemini: What is machine learning?
+🔄 Calling Gemini API...
+📥 Gemini response received: Machine learning is...
+🎤 Voice recording started
+🎤 Voice transcribed: Hello there
+🌐 Language changed to: हिन्दी
+🎤 Voice recognition language set to: hi-IN
+
+================================================================================
+
+VOICE FEATURES
+
+HOW VOICE WORKS
+1. Click the microphone button
+2. Browser asks for mic permission (click "Allow")
+3. Button turns red and pulses (you're recording!)
+4. Speak clearly in your selected language
+5. Stop speaking → automatically converts to text → sends to AI
+6. Get response in the same language!
+
+VOICE IN MULTIPLE LANGUAGES
+The widget automatically adjusts voice recognition based on your selected language:
+- Select English → Recognizes English speech
+- Select Hindi → Recognizes Hindi speech  
+- Select Spanish → Recognizes Spanish speech
+
+VOICE REQUIREMENTS
+- HTTPS website (browsers require this for microphone)
+- User permission (they need to allow mic access)
+- Supported browser (Chrome/Edge work best)
+- Quiet-ish environment (for better recognition)
+- Select correct language before speaking
+
+VOICE TROUBLESHOOTING
+- Button grayed out? → Browser doesn't support voice (try Chrome)
+- Permission denied? → User needs to allow microphone in browser settings
+- Not hearing me? → Speak louder, clearer, or check microphone
+- Wrong words? → Ensure correct language is selected in dropdown
+- Mixing languages? → Switch language first, then speak
+
+================================================================================
+
+HOW MEMORY WORKS
+
+CHAT HISTORY
+The widget remembers conversations using two methods:
+
+1. Session Memory: AI remembers context during your chat session
+2. Local Storage: Chat history saved in browser (survives page refresh)
+3. Language Preference: Your selected language is also saved!
+
+WHAT GETS REMEMBERED
+✅ All messages (yours and AI responses)
+✅ Conversation context (AI knows what you talked about)
+✅ Timestamps and message order
+✅ Voice and text messages equally
+✅ Your language preference
+
+MEMORY INDICATORS
+- Green dot + "Context Active" = has conversation history
+- Trash button in header = click to clear all history and start fresh
+- Language dropdown = shows and saves your preference
+
+================================================================================
+
+TROUBLESHOOTING COMMON ISSUES
+
+"AI RESPONDING IN WRONG LANGUAGE"
+Problem: Selected Hindi but AI responds in English  
+Solution: AI prompt includes language instruction - may take one message to adapt. Try asking again.
+
+"VOICE NOT RECOGNIZING MY LANGUAGE"
+Problem: Speaking Hindi but it transcribes as English  
+Solution: Make sure you selected the correct language in dropdown BEFORE clicking voice button
+
+"LANGUAGE SELECTOR NOT SHOWING"
+Problem: Can't see language dropdown in chat header  
+Solution: Check if supportedLanguages is configured, rebuild the widget
+
+"VOICE BUTTON DOESN'T WORK"
+Problem: Can't record voice messages  
+Solution: Use Chrome/Edge, ensure HTTPS, allow microphone permission
+
+"WIDGET LOOKS BROKEN"
+Problem: Styling issues or layout problems  
+Solution: Check for CSS conflicts, ensure Shadow DOM is working
+
+"MEMORY NOT WORKING"
+Problem: Chat doesn't remember previous conversations  
+Solution: Check browser storage settings, ensure localStorage enabled
+
+"WIDGET WON'T LOAD"
+Problem: Script errors or not appearing  
+Solution: Check console for errors, verify script path is correct
+
+================================================================================
+
+SECURITY & PRIVACY
+
+WHAT DATA GETS STORED
+- Local Browser: Chat history + language preference (stays on user's device)
+- Google Gemini: Messages sent to AI (follows Google's privacy policy)
+- Your Server: Nothing! Widget is completely client-side
+
+API KEYS
+- Gemini API key is embedded in the widget code
+- For production, consider server-side proxy for better security
+- Current setup is fine for demos and internal tools
+
+LANGUAGE DATA
+- Language preference stored in localStorage only
+- No language data sent to servers
+- User can clear at any time via browser settings
+
+================================================================================
+
+DEPLOYMENT OPTIONS
+
+OPTION 1: SIMPLE STATIC HOSTING
+1. Run npm run build
+2. Upload dist/widget.js to your server
+3. Include script tag on your website
+4. Done!
+
+OPTION 2: CDN HOSTING
+1. Upload built file to CDN (AWS S3, Netlify, etc.)
+2. Use CDN URL in script tag
+3. Better performance worldwide
+
+OPTION 3: SELF-HOSTED
+1. Include widget files in your existing website
+2. Serve from same domain
+3. Good for privacy-sensitive applications
+
+================================================================================
+
+WHAT'S NEXT?
+
+POSSIBLE IMPROVEMENTS
+- ✅ Multi-language support (DONE!)
+- More languages out of the box (currently 3, easily add 100+)
+- Text-to-Speech: AI could speak responses back
+- File Upload: Let users share images/documents
+- Auto-detect language from user's browser
+- Translation mode: Type in one language, get response in another
+- Analytics: Track usage and popular questions
+- Integrations: Connect to CRM, help desk, etc.
+- Custom Actions: Let AI perform specific tasks on your site
+
+EASY WINS
+- Better Error Messages: More helpful troubleshooting
+- Typing Indicators: Show when AI is thinking
+- Message Timestamps: More detailed time info
+- Dark Mode: Toggle between light/dark themes
+- Keyboard Shortcuts: Power user features
+- Language auto-detection
+
+================================================================================
+
+NEED HELP?
+
+FOR USERS
+- Check the troubleshooting section above
+- Try refreshing the page
+- Ensure correct language is selected
+- Ensure microphone permissions are enabled
+- Use Chrome or Edge for best experience
+
+FOR DEVELOPERS  
+- Check browser console for error messages
+- Verify all files are loading correctly
+- Test with npm run dev first before production
+- Look for TypeScript/build errors
+- Check that supportedLanguages array is properly formatted
+
+QUICK DEBUG CHECKLIST
+□ Script tag correctly included?
+□ HTTPS enabled? (required for voice)
+□ Console showing any errors?
+□ Gemini API working? (check network tab)
+□ Browser supports Speech API?
+□ Language configuration correct?
+□ Voice recognition enabled in browser?
+
+================================================================================
+
+TECHNICAL SPECS
+
+BUNDLE SIZE
+- JavaScript: ~321KB (includes React, Gemini SDK, language support, everything)
+- CSS: ~8.3KB (all styles including language selector)
+- Total: Small enough for fast loading, big enough to be powerful
+
+PERFORMANCE
+- First Load: ~1-2 seconds on average internet
+- Subsequent Loads: Cached, nearly instant
+- AI Response Time: Usually 1-3 seconds depending on complexity
+- Voice Recognition: Real-time as you speak
+- Language Switch: Instant (no reload needed)
+
+BROWSER REQUIREMENTS
+- JavaScript: ES2020+ (modern browsers only)
+- CSS: Flexbox, CSS Grid (IE11 not supported)
+- Voice: Web Speech API (Chrome/Edge recommended)
+- Storage: LocalStorage (for chat memory + language preference)
+- Multi-language Voice: Chrome/Edge have best language support
+
+LANGUAGE SUPPORT
+- Out of the box: English, Hindi, Spanish
+- Easy to add: Any language Gemini AI supports (100+)
+- Voice recognition: Depends on browser support (Chrome supports 50+ languages)
+- Right-to-left languages: Not tested yet but should work!
+
+================================================================================
+
+Last updated: Built with ❤️ using React, TypeScript, and Google Gemini AI
+Now with multi-language support! 🌐
+
+================================================================================
+
+QUICK COPY-PASTE INTEGRATION
+
+Ready to add to your website? Here's the complete code with multi-language support:
+
+<!-- Add this where you want the widget -->
+<script>
+  window.AgentWidgetConfig = {
+    position: 'bottom-right',
+    theme: { primaryColor: '#4F46E5' },
+    agent: { 
+      name: 'AI Assistant',
+      avatar: 'https://your-logo.png'
+    },
+    enableVoice: true,
+    context: "You are a helpful AI assistant for [YOUR COMPANY NAME]. Be friendly, helpful, and professional.",
+    supportedLanguages: [
+      { code: 'en', name: 'English', nativeName: 'English', voiceCode: 'en-US' },
+      { code: 'hi', name: 'Hindi', nativeName: 'हिन्दी', voiceCode: 'hi-IN' },
+      { code: 'es', name: 'Spanish', nativeName: 'Español', voiceCode: 'es-ES' }
+    ],
+    defaultLanguage: 'en'
+  };
+</script>
+<script src="./dist/widget.js"></script>
+
+<!-- That's it! Your multilingual AI assistant is now live 🚀🌐 -->
+
+================================================================================
+
+LANGUAGE CODE REFERENCE
+
+Quick reference for common languages (add any of these to supportedLanguages):
+
+EUROPEAN LANGUAGES
+{ code: 'fr', name: 'French', nativeName: 'Français', voiceCode: 'fr-FR' }
+{ code: 'de', name: 'German', nativeName: 'Deutsch', voiceCode: 'de-DE' }
+{ code: 'it', name: 'Italian', nativeName: 'Italiano', voiceCode: 'it-IT' }
+{ code: 'pt', name: 'Portuguese', nativeName: 'Português', voiceCode: 'pt-PT' }
+{ code: 'ru', name: 'Russian', nativeName: 'Русский', voiceCode: 'ru-RU' }
+{ code: 'nl', name: 'Dutch', nativeName: 'Nederlands', voiceCode: 'nl-NL' }
+{ code: 'pl', name: 'Polish', nativeName: 'Polski', voiceCode: 'pl-PL' }
+
+ASIAN LANGUAGES
+{ code: 'zh', name: 'Chinese', nativeName: '中文', voiceCode: 'zh-CN' }
+{ code: 'ja', name: 'Japanese', nativeName: '日本語', voiceCode: 'ja-JP' }
+{ code: 'ko', name: 'Korean', nativeName: '한국어', voiceCode: 'ko-KR' }
+{ code: 'th', name: 'Thai', nativeName: 'ไทย', voiceCode: 'th-TH' }
+{ code: 'vi', name: 'Vietnamese', nativeName: 'Tiếng Việt', voiceCode: 'vi-VN' }
+{ code: 'id', name: 'Indonesian', nativeName: 'Bahasa Indonesia', voiceCode: 'id-ID' }
+
+MIDDLE EAST & AFRICA
+{ code: 'ar', name: 'Arabic', nativeName: 'العربية', voiceCode: 'ar-SA' }
+{ code: 'he', name: 'Hebrew', nativeName: 'עברית', voiceCode: 'he-IL' }
+{ code: 'tr', name: 'Turkish', nativeName: 'Türkçe', voiceCode: 'tr-TR' }
+
+AMERICAS
+{ code: 'es', name: 'Spanish', nativeName: 'Español', voiceCode: 'es-ES' }
+{ code: 'pt', name: 'Portuguese (BR)', nativeName: 'Português (BR)', voiceCode: 'pt-BR' }
+
+================================================================================

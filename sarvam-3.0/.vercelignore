@@ -1,0 +1,15 @@
+# Don't upload these to Vercel
+node_modules/
+.env
+.env.local
+.env.*.local
+*.log
+.DS_Store
+.vscode/
+.idea/
+
+# Keep source files but not built files during upload
+# (Vercel will build them)
+client/node_modules/
+server/node_modules/
+
